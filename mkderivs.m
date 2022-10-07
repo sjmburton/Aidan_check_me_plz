@@ -10,12 +10,13 @@ function derivs = mkderivs(t,intvars)
 x = intvars(1); 
 v = intvars(2);
 %
-global m k
-m = 10;
-k = 100;
+global m k c
+m = 0.5;
+k = 44.2;
+c = 9.402;
 %
 derivs(1) = v;  %derivative of x
-derivs(2) = -k/m*x;  %derivative of v
+derivs(2) = 1/m*(-c*v-k*x);  %derivative of v
 %
 derivs = [derivs(1);derivs(2)];   % result must be a column vector,
 						% not a row vector
